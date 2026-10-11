@@ -1,0 +1,415 @@
+<html>
+<head>
+<title>Dgclock in Java</title>
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#ff0000" vlink="#0000ff" alink="#00ff00">
+<center>
+<font color="#ff0000">
+<h2>Dgclock in Java</h2>
+</font>
+<font size=+1 color="brown">
+<b>Version 2.3</b>
+</font>
+<p>
+<table border cellspacing=0>
+<tr>
+    <td bgcolor="#00ff00">
+    <b>Latest Release:</b> Nov 15, 1996
+    </td>
+<tr>
+    </td>
+    <td bgcolor="#00ffff">
+    <b>Initial Release:</b> Dec 05, 1995
+    </td>
+</tr>
+</table>
+</center>
+<p>
+This is a simple digital clock written in <a
+href="http://java.sun.com">Java</a>. This clock can display time and date of
+any place in world. The time can be displayed in 12 hour or 24 hour format.
+The foreground and background colors of the digits can be changed. The clock
+can be wrapped with a ornamental frame as well.
+<p>
+You will need a java capable browser like <a
+href="http://www.netscape.com">netscape</a> in order to view the clock.
+I compiled and tested the applet on DEC OSF/1 3.2 with JDK 1.0.2
+and netscape 3.01.
+<p>
+This applet uses double-buffering technique, therefore, you should not see
+any flickering at all.
+<h3>Examples</h3>
+<hr noshade>
+<center>
+- It may take some time to transfer -
+</center>
+<p>
+<center>
+<table>
+<tr>
+<td>
+    <b>My Time:</b>
+</td>
+<td>
+    <applet code="Dgclock.class" width=100 height=30>
+    <param name="TZ" value="GMT-0500">
+    <param name="ShowDate" value="yes">
+    <b>Sorry Your browser is not java capable</b>
+    </applet>
+</td>
+<td>
+    <b>Your time:</b>
+</td>
+<td>
+    <applet code="Dgclock.class" width=100 height=30>
+    <param name="ShowDate" value="yes">
+    <param name="ShowVersion" value="no">
+    <param name="ShowFrame" value="no">
+    <param name="fg" value="ff0000">
+    <param name="bg" value="white">
+    </applet>
+</td>
+<td>
+    <b>Berlin:</b>
+</td>
+<td>
+    <applet code="Dgclock.class" width=100 height=30>
+    <param name="TZ" value="GMT+0100">
+    <param name="ShowDate" value="yes">
+    <param name="ShowVersion" value="no">
+    <param name="fg" value="yellow">
+    </applet>
+</td>
+</tr>
+<tr>
+<td>
+    <b>Dhaka:</b>
+</td>
+<td>
+    <applet code="Dgclock.class" width=100 height=30>
+    <param name="TZ" value="GMT+0600">
+    <param name="ShowDate" value="yes">
+    <param name="ShowVersion" value="no">
+    <param name="fg" value="black">
+    <param name="bg" value="d3b5b5">
+    </applet>
+</td>
+<td>
+    <b>New York:</b>
+</td>
+<td>
+    <applet code="Dgclock.class" width=100 height=30>
+    <param name="TZ" value="GMT-0500">
+    <param name="ShowDate" value="yes">
+    <param name="ShowVersion" value="no">
+    <param name="ShowFrame" value="no">
+    <param name="fg" value="black">
+    <param name="bg" value="d3b5b5">
+    </applet>
+</td>
+<td>
+    <b>GMT:</b>
+</td>
+<td>
+    <applet code="Dgclock.class" width=100 height=30>
+    <param name="TZ" value="GMT+0000">
+    <param name="ShowDate" value="yes">
+    <param name="ShowVersion" value="no">
+    <param name="ShowFrame" value="no">
+    <param name="fg" value="green">
+    </applet>
+</td>
+</tr>
+</table>
+</center>
+<hr noshade width=50%>
+<h3>What's new</h3>
+<ul type=square>
+<li> 
+<font size=-1>[implemented in 2.3]</font><br>
+<font color="brown">
+Foreground and Background color can be changed.
+</font>
+<p>
+<li>
+<font size=-1>
+[implemented in 2.2]<br>
+</font>
+Uses an image strip instead of individual digit images. Therefore, this
+version loads much faster. The name of the strip image is <b>dgstrip.gif</b>
+and it is only 700 bytes. The strip image must be located in the same 
+directory as Dgclock.class.  The strip looks like below:<br>
+<img src="./dgstrip.gif" alt="strip">
+</ul>
+<h3>How to use it</h3>
+<blockquote>
+If you want to use this applet in your web page, 
+you have to download the archive first. Then, you have to extract the
+necessary files from the archive. The archive is available in 3 formats,
+<i>gzipped tar, unix compressed tar</i> and <i>zipped</i>
+archive. Download <b>any one</b>
+of the archives depending on what kind of de-compressor you have.
+<p>
+Download
+<p>
+<ul>
+<li>
+<a href="src/jdgclock/jdgclock2.3.tar.gz">
+gzipped tar (jdgclock2.3.tar.gz)</a>
+<br>
+<font size=-1>
+[If you do not have gzip/gunzip, it is available at <a
+href="ftp://prep.ai.mit.edu/pub/gnu/"><b>prep.ai.mit.edu</b>]</a>.
+</font>
+<br>
+or
+<br>
+<li>
+<a href="src/jdgclock/jdgclock2.3.tar.Z">
+unix compressed tar archive (jdgclock2.3.tar.Z)</a>
+<br>
+or
+<br>
+<li>
+<a href="src/jdgclock/jdgclk.zip">
+zipped archive (jdgclk.zip)</a>
+</ul>
+The following files will be extracted to the current working directory.
+Make sure you do not have any files with those name in the directory or
+they will be over written.
+<pre>
+        ColorFilter.class
+        Dgclock.class
+        Dgclock.html
+        Dgclock.java
+        Makefile
+        README
+        dgstrip.gif
+</pre>
+You need <b>Dgclock.class</b>, <b>ColorFilter.class</b> and <b>dgstrip.gif</b>
+in order to run the applet.
+</p>
+<b>Please consider NOT running the applet remotely from this machine.</b>
+<p>
+After downloading, copy the archive to your
+<i>public_html</i> directory (or wherever you keep your home pages). 
+<p>If you downloaded the gzipped version,
+at the shell prompt, type:
+<pre>
+    gunzip &lt; jdgclock2.3.tar.gz | tar xvf -
+      or
+    gzip -d &lt; jdgclock2.3.tar.gz | tar xvf -
+</pre>
+If you downloaded the unix compressed version, at the shell prompt, type:
+<pre>
+    uncompress jdgclock2.3.tar.Z
+    tar -xvf jdgclock2.3.tar
+</pre>
+If you downloaded the zipped version, type:
+<pre>
+    unzip jdgclk.zip
+</pre>
+<p>
+<b>You do not need to compile the code in order to use it</b>. 
+Dgclock comes with
+pre-compiled classes <code>Dgclock.class</code> and
+<code>ColorFilter.class</code>. If you want to play with the
+source, please look at 
+<a href="Dgclock.java"><i>Dgclock.java</i></a> (it is in the distribution
+as well).
+<p>
+Now, from your web page, call the applet as below:
+<pre>
+    <font color="brown">
+    &lt;applet code="Dgclock.class" width=100 height=30&gt;&lt;/applet&gt;
+    </font>
+</pre>
+This will show the visitor's time in 24 hour format. To display the time in
+12 hour format, use:
+<pre>
+    <font color="brown">
+    &lt;applet code="Dgclock.class" width=100 height=30&gt;
+    &lt;param name="TimeFormat" value="%I"&gt;
+    &lt;/applet&gt;
+    </font>
+</pre>
+To display your time, you have to know your timezone offset from GMT. For
+example, if you live in New York, your timezone offset is 5 hours east of
+Greenwich meridian. Note, offset is negative for east and positive for west.
+<p>
+For New York:
+<pre>
+    <font color="brown">
+    &lt;applet code="Dgclock.class" width=100 height=30&gt;
+    &lt;param name="TZ" value="GMT-0500"&gt;
+    &lt;/applet&gt;
+    </font>
+</pre>
+<p>
+Note, you can not use just -5, you must use the four digit offset starting
+with GMT+ or GMT-. If your
+timezone offset is 4 hours, 30 minutes west of Greenwich meridian, the param
+line will be:
+<pre>
+    <font color="brown">
+    &lt;param name="TZ" value="GMT+0430"&gt;
+    </font>
+</pre>
+To display GMT, the param line will be:
+<pre>
+    <font color="brown">
+    &lt;param name="TZ" value="GMT+0000"&gt;
+    </font>
+</pre>
+To display date with time:
+<pre>
+    <font color="brown">
+    &lt;applet code="Dgclock.class" width=100 height=30&gt;
+    &lt;param name="TZ" value="GMT-0500"&gt;
+    &lt;param name="ShowDate" value="yes"&gt;
+    &lt;/applet&gt;
+    </font>
+</pre>
+<p>
+If you do not want to display the frame around the clock, use:
+<pre>
+    <font color="brown">
+    &lt;applet code="Dgclock.class" width=89 height=20&gt;
+    &lt;param name="ShowFrame" value="no"&gt;
+    </font>
+</pre>
+<p>
+If you move the mouse cursor on the clock while it is running, the version
+information is displayed on netscape's status area. If you do not want this,
+use:
+<pre>
+    <font color="brown">
+    &lt;param name="ShowVersion" value="no"&gt;
+    </font>
+</pre>
+If ShowVersion is "no", when the mouse pointer is moved over the clock,
+it will display the timezone offset from GMT in the netscape status area.
+<p>
+To change the foreground and background color of the digits, the parameters
+<b>fg</b> and <b>bg</b> can be used respectively. 
+<pre>
+    <font color="brown">
+    &lt;param name="fg" value="red"&gt;
+    </font>
+</pre>
+The <b>value</b> of <b>fg</b> and <b>bg</b> can be one of the following
+color names
+<pre>
+    <font color="brown" size=+1>
+    red,green,blue,cyan,
+    magenta, yellow,orange,
+    pink,black,white
+    </font>
+</pre>
+a 6 digit hex number like ff0000.
+Example:
+<pre>
+    <font color="brown">
+    &lt;param name="fg" value="yellow"&gt;
+    &lt;param name="bg" value="red"&gt;
+
+    &lt;param name="bg" value="d3b5b5"&gt;
+    &lt;param name="fg" value="000000"&gt;
+
+    </font>
+</pre>
+
+</blockquote>
+<h3>Acknowledgment</h3>
+<blockquote>
+Inspired by <a href="http://www.webpage.com/~vijay/java/wt/testwt.html">World
+TIme</a> applet and
+<a href="http://www.javasoft.com/applets/applets/Clock/index.html">Clock2</a>
+applet.
+</blockquote>
+<p>
+<h3>Copyright</h3>
+<blockquote>
+This applet is in the public domain. Do anything you like with it. It would
+be nice but not required if you give me the credit for it.<b>If you are using
+this applet, please 
+<a href="mailto:ma_muquit@fccc.edu">let me know</a>.</b>
+Bug reports, suggestions are always welcome!
+</blockquote>
+<p>
+<h3>Frequently Asked Question(s)</h3>
+<blockquote>
+<b>
+<font color="brown">
+1. I followed your instructions exactly, but the clock does not show up.
+Instead it shows a solid rectangle. What's wrong?
+</font>
+</b>
+<p>
+Several things may cause this problem:
+<ol>
+<li> File permission problem. Change the mode of the files accordingly (unix):
+<pre>
+    chmod 644 ./Dgclock.class
+    chmod 644 ./ColorFilter.class
+    chmod 644 ./dgstrip.gif
+</pre>
+If you see the message
+<font color="brown">
+    Loading image...please wait!
+</font>
+at netscape's status message area for ever, this is an indication that the
+image loading is failed possibly because it could not find the stip image
+file <code>dgstrip.gif</code> or the image file is are not readable.
+<p>
+<li> You are using an old version of web browser.
+<p>
+</ol>
+</blockquote>
+<h3>ChangeLog</h3>
+<blockquote>
+Version 2.3
+<ul type=square>
+<li> Foreground and Background color can be changed. (11/15/1996).
+</ul>
+Version 2.2
+<ul type=square>
+<li> Uses image strip instead of individual digit images. (11/02/1996)
+</ul>
+<p>
+Version 2.1
+<p>
+<ul type=square> 
+<p> 
+<li> The default 24 hour time format was not working. Thanks to  
+<a href="http://www.primenet.com/~hawaii"><i>Amy and Cary</i></a> for 
+pointing it out. (March 20, 1996). 
+<p> 
+<li> Using  
+<a href="http://java.sun.com/JDK-1.0/api/java.awt.MediaTracker.html">    
+MediaTracker</a> class to avoid incremental display of digit images. 
+That is, the time will be displayed after all the images are loaded completely.
+
+Suggested by <a href="http://java.sun.com/people/flar/">Jim Graham</a> 
+<p>   
+<li> The clock can be displayed without frame (default is to use frame). 
+<p>  
+<li> The clock can be stopped by clicking a mouse button on the applet. 
+Clicking again will restart the clock. 
+<p> 
+<li> Displays "Loading image.." message at netscape's status area while the 
+images are being loaded.  
+</ul>
+</blockquote>
+Enjoy!
+<hr noshade>
+<font size=-1>
+Muhammad A Muquit
+<br>
+<a href="mailto:ma_muquit@fccc.edu"><i>ma_muquit@fccc.edu</i></a>
+<p>
+<font color="brown">Last updated: November 15, 1996.</font>
+<p>
+<a href="index.html"><B>[Homepage]</B></a>
+</body>
+</html>
